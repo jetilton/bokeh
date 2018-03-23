@@ -115,7 +115,7 @@ def _ModelInEmptyDocument(model, apply_theme=None):
     model._document = None
     for ref in model.references():
         ref._document = None
-    new_doc = Document()
+    new_doc = Document(theme=doc.theme)
     new_doc.add_root(model)
 
     if apply_theme is FromCurdoc:
